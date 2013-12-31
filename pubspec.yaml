@@ -4,6 +4,7 @@ dependencies:
     polymer: any
 dev_dependencies:
     unittest: any
+    hop: any
 transformers:
 - polymer:
     entry_points: web/project_pluto.html

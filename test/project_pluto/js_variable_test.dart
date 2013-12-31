@@ -1,7 +1,10 @@
+import 'package:unittest/html_enhanced_config.dart';
 import "package:unittest/unittest.dart";
-import "package:project_pluto/project_pluto.dart";
+import "package:project_pluto/project_pluto.dart" as app;
 
 main() {
+  useHtmlEnhancedConfiguration();
+  app.main();
   test("can construct a js_variable object", () {
     
   });
