@@ -25,7 +25,7 @@ class JsCodelet extends Codelet {
    *   the variable !!
    */
   Variable onTick([List<Variable> variables]) {
-    return object.callMethod('onTick', variables);
+    return object.callMethod('onTick', variables) as JsVariable;
   }
   
   /**

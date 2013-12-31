@@ -2,6 +2,8 @@ name: project_pluto
 description: A sample Polymer application
 dependencies:
     polymer: any
+dev_dependencies:
+    unittest: any
 transformers:
 - polymer:
     entry_points: web/project_pluto.html
