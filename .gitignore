@@ -11,3 +11,5 @@ packages
 .buildlog
 web/out/*
 pubspec.lock
+content_shell*
+drt_contentshell/
