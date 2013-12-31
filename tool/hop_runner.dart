@@ -5,6 +5,8 @@ import 'package:hop/hop_tasks.dart';
 import 'dart:io';
 import 'dart:async';
 
+final allPassedRegExp = new RegExp('Total \\d+ passed, 0 failed, 0 errors');
+
 main(List<String> args) {
   var paths = ['lib/project_pluto.dart'];
   
@@ -17,10 +19,9 @@ main(List<String> args) {
 }
 
 dynamic createJsCodeletUnitTestTask() {
-  final allPassedRegExp = new RegExp('All \\d+ tests passed');
   return (TaskContext ctx){
     ctx.info("Running Unit Tests....");
-    var result = Process.run('content_shell',
+    var result = Process.run('./content_shell',
         ['--dump-render-tree',  'test/project_pluto/js_codelet_test.html']).then((ProcessResult process){
       ctx.info(process.stdout);
       if(allPassedRegExp.hasMatch(process.stdout) == false) {
@@ -32,10 +33,9 @@ dynamic createJsCodeletUnitTestTask() {
 }
 
 dynamic createJsVariableUnitTestTask() {
-  final allPassedRegExp = new RegExp('All \\d+ tests passed');
   return (TaskContext ctx){
     ctx.info("Running Unit Tests....");
-    var result = Process.run('content_shell',
+    var result = Process.run('./content_shell',
         ['--dump-render-tree',  'test/project_pluto/js_variable_test.html']).then((ProcessResult process){
       ctx.info(process.stdout);
       if(allPassedRegExp.hasMatch(process.stdout) == false) {
