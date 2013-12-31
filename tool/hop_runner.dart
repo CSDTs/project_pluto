@@ -20,7 +20,7 @@ dynamic createJsCodeletUnitTestTask() {
   final allPassedRegExp = new RegExp('All \\d+ tests passed');
   return (TaskContext ctx){
     ctx.info("Running Unit Tests....");
-    var result = Process.run('content_shell',
+    var result = Process.run('./content_shell',
         ['--dump-render-tree',  'test/project_pluto/js_codelet_test.html']).then((ProcessResult process){
       ctx.info(process.stdout);
       return allPassedRegExp.hasMatch(process.stdout);
@@ -33,7 +33,7 @@ dynamic createJsVariableUnitTestTask() {
   final allPassedRegExp = new RegExp('All \\d+ tests passed');
   return (TaskContext ctx){
     ctx.info("Running Unit Tests....");
-    var result = Process.run('content_shell',
+    var result = Process.run('./content_shell',
         ['--dump-render-tree',  'test/project_pluto/js_variable_test.html']).then((ProcessResult process){
       ctx.info(process.stdout);
       return allPassedRegExp.hasMatch(process.stdout);
